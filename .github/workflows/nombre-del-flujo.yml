@@ -1,0 +1,15 @@
+name: Leer contenido del README
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  mostrar_readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar contenido del README
+        run: cat README.md
