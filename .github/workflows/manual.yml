@@ -1,0 +1,15 @@
+name: Ejecutar manualmente
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prueba_manual:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje fijo
+        run: echo "Este flujo se ejecutó manualmente desde Actions"
+
+      - name: Mostrar contenido del README
+        uses: actions/checkout@v4
+      - run: cat README.md
