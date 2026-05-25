@@ -1,0 +1,12 @@
+name: Mi primer Action
+
+on:
+  push:
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar mensaje
+        run: echo "¡Hola alumnos! Se detectó un nuevo commit."
