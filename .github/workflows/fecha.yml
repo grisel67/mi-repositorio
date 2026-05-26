@@ -1,0 +1,10 @@
+name: Mostrar fecha
+on: push
+jobs:
+  fecha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Mostrar fecha actual
+        run: date
