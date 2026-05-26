@@ -1,0 +1,13 @@
+name: Flujo de prueba
+
+on: push
+
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar mensaje
+        run: echo "Hola clase 👩‍🏫, este es mi primer flujo"
