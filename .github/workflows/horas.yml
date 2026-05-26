@@ -1,0 +1,14 @@
+name: Mostrar horas
+on: push
+jobs:
+  horas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Hora en UTC
+        run: date -u
+
+      - name: Hora en Argentina (GMT-3)
+        run: TZ=America/Argentina/Buenos_Aires date
