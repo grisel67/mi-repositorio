@@ -25,7 +25,7 @@ jobs:
       - name: Convertir DOCX a PDF
         run: |
           mkdir salida
-          libreoffice --headless --convert-to pdf documento.docx --outdir salida
+          libreoffice --headless --convert-to pdf probando.docx --outdir salida
 
       - name: Verificar PDF generado
         run: |
