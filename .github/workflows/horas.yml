@@ -1,14 +1,23 @@
-name: Mostrar horas
+name: CI y CD de la hora
 on: push
 jobs:
-  horas:
+  hora:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Hora en UTC
+      # CI: mostrar la hora en los logs
+      - name: Hora en UTC (CI)
         run: date -u
 
-      - name: Hora en Argentina (GMT-3)
-        run: TZ=America/Argentina/Buenos_Aires date
+      # CD: guardar la hora en un archivo y entregarlo
+      - name: Crear archivo con hora (CD)
+        run: date > hora.txt
+
+      - name: Guardar artefacto (CD)
+        uses: actions/upload-artifact@v4
+        with:
+          name: hora
+          path: hora.txt
+
